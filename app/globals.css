@@ -1,8 +1,28 @@
 @import "tailwindcss";
 
+* {
+  scroll-behavior: smooth !important;
+}
+
+html {
+  scroll-behavior: smooth !important;
+  overflow-x: hidden;
+  scroll-padding-top: 100px; /* Account for fixed navbar */
+}
+
+body {
+  scroll-behavior: smooth !important;
+  overflow-x: hidden;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-cyan-400: #22d3ee;
+  --color-sky-500: #0ea5e9;
+  --color-sky-800: #075985;
 }
 
 @theme inline {
@@ -16,6 +36,11 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --color-neutral-500: #737373;
+    --color-neutral-600: #525252;
+    --color-cyan-400: #22d3ee;
+    --color-sky-500: #0ea5e9;
+    --color-sky-800: #075985;
   }
 }
 
