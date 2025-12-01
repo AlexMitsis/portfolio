@@ -5,15 +5,15 @@ import { useState, useEffect } from 'react';
 
 const skills = [
   { name: 'Python', icon: 'python', color: '#3776AB' },
-  { name: 'Java', icon: 'openjdk', color: '#437291' },
+  { name: 'Java', icon: 'oracle', color: '#f89820' },
   { name: 'JavaScript', icon: 'javascript', color: '#F7DF1E' },
   { name: 'FastAPI', icon: 'fastapi', color: '#009688' },
-  { name: 'Django', icon: 'django', color: '#092E20' },
-  { name: 'Spring Boot', icon: 'springboot', color: '#6DB33F' },
+  { name: 'Django', icon: 'django', color: '#0C4B33' },
+  { name: 'Spring Boot', icon: 'spring', color: '#6DB33F' },
   { name: 'Postman', icon: 'postman', color: '#FF6C37' },
   { name: 'PostgreSQL', icon: 'postgresql', color: '#4169E1' },
   { name: 'Git', icon: 'git', color: '#F05032' },
-  { name: 'GitHub', icon: 'github', color: '#181717' },
+  { name: 'GitHub', icon: 'github', color: '#FFFFFF' },
   { name: 'Docker', icon: 'docker', color: '#2496ED' },
   { name: 'PyTorch', icon: 'pytorch', color: '#EE4C2C' },
 ];
@@ -151,7 +151,7 @@ export default function Skills() {
                       alt={skill.name}
                       className="w-14 h-14 transition-all duration-300"
                       style={{
-                        filter: `drop-shadow(0 0 8px ${skill.color}60)`,
+                        filter: `drop-shadow(0 0 12px ${skill.color})`,
                       }}
                     />
                   </div>

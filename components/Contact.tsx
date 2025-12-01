@@ -216,7 +216,7 @@ export default function Contact() {
 
                 <div className="space-y-4">
                   <a
-                    href="https://linkedin.com/in/your-profile"
+                    href="https://www.linkedin.com/in/alexandrosmitsis/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-4 px-6 py-4 bg-[#19181A]/50 hover:bg-[#0A66C2]/10 text-[#FCFCFA] font-mono rounded-xl border border-[#5C6370]/30 hover:border-[#0A66C2]/50 transition-all duration-300 hover:scale-[1.03] cursor-pointer"

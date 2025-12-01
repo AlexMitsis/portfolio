@@ -19,9 +19,9 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-8 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 md:px-8 max-w-5xl mx-auto">
         <motion.h1
-          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-mono text-[#FCFCFA]"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-mono text-[#FCFCFA]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -30,28 +30,33 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          className="text-xl md:text-2xl text-[#727072] mb-8 font-mono"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#727072] mb-8 font-mono"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <span className="text-[#FC9867]">{'// '}</span>Software Engineer <span className="text-[#5C6370]">|</span> Bioinformatics Researcher <span className="text-[#5C6370]">|</span> AI/ML Developer
+          <span className="text-[#FC9867]" aria-hidden="true">{'// '}</span>
+          <span className="inline-block sm:inline">Software Engineer</span>{' '}
+          <span className="text-[#5C6370]" aria-hidden="true">|</span>{' '}
+          <span className="inline-block sm:inline">Bioinformatics Researcher</span>{' '}
+          <span className="text-[#5C6370]" aria-hidden="true">|</span>{' '}
+          <span className="inline-block sm:inline">AI/ML Developer</span>
         </motion.p>
 
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <div className="px-4 py-2 bg-[#2D2A2E]/60 backdrop-blur-sm border border-[#AB9DF2]/30 rounded-lg">
-            <span className="text-[#AB9DF2] font-mono text-sm">Chubb</span>
+          <div className="px-3 sm:px-4 py-2 bg-[#2D2A2E]/60 backdrop-blur-sm border border-[#AB9DF2]/30 rounded-lg">
+            <span className="text-[#AB9DF2] font-mono text-xs sm:text-sm">Chubb</span>
           </div>
-          <div className="px-4 py-2 bg-[#2D2A2E]/60 backdrop-blur-sm border border-[#FFD866]/30 rounded-lg">
-            <span className="text-[#FFD866] font-mono text-sm">MSc Bioinformatics</span>
+          <div className="px-3 sm:px-4 py-2 bg-[#2D2A2E]/60 backdrop-blur-sm border border-[#FFD866]/30 rounded-lg">
+            <span className="text-[#FFD866] font-mono text-xs sm:text-sm">MSc Bioinformatics</span>
           </div>
-          <div className="px-4 py-2 bg-[#2D2A2E]/60 backdrop-blur-sm border border-[#A9DC76]/30 rounded-lg">
-            <span className="text-[#A9DC76] font-mono text-sm">BSc Computer Science</span>
+          <div className="px-3 sm:px-4 py-2 bg-[#2D2A2E]/60 backdrop-blur-sm border border-[#A9DC76]/30 rounded-lg">
+            <span className="text-[#A9DC76] font-mono text-xs sm:text-sm">BSc Computer Science</span>
           </div>
         </motion.div>
 
@@ -63,21 +68,21 @@ export default function Hero() {
         >
           <a
             href="#work-experience"
-            className="group px-6 py-3 bg-gradient-to-r from-[#AB9DF2]/20 to-[#FC9867]/20 hover:from-[#AB9DF2]/30 hover:to-[#FC9867]/30 backdrop-blur-sm text-[#FCFCFA] font-mono rounded-xl border border-[#AB9DF2]/40 hover:border-[#AB9DF2]/60 transition-all duration-300"
+            className="group px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-[#AB9DF2]/20 to-[#FC9867]/20 hover:from-[#AB9DF2]/30 hover:to-[#FC9867]/30 backdrop-blur-sm text-[#FCFCFA] font-mono text-sm sm:text-base rounded-xl border border-[#AB9DF2]/40 hover:border-[#AB9DF2]/60 transition-all duration-300"
           >
-            Work Experience →
+            Work Experience <span aria-hidden="true">→</span>
           </a>
           <a
             href="#skills"
-            className="group px-6 py-3 bg-[#2D2A2E]/60 hover:bg-[#2D2A2E]/80 backdrop-blur-sm text-[#FCFCFA] font-mono rounded-xl border border-[#5C6370]/40 hover:border-[#FC9867]/60 transition-all duration-300"
+            className="group px-4 sm:px-6 py-2.5 sm:py-3 bg-[#2D2A2E]/60 hover:bg-[#2D2A2E]/80 backdrop-blur-sm text-[#FCFCFA] font-mono text-sm sm:text-base rounded-xl border border-[#5C6370]/40 hover:border-[#FC9867]/60 transition-all duration-300"
           >
-            Skills →
+            Skills <span aria-hidden="true">→</span>
           </a>
           <a
             href="#projects"
-            className="group px-6 py-3 bg-[#2D2A2E]/60 hover:bg-[#2D2A2E]/80 backdrop-blur-sm text-[#FCFCFA] font-mono rounded-xl border border-[#5C6370]/40 hover:border-[#FF6188]/60 transition-all duration-300"
+            className="group px-4 sm:px-6 py-2.5 sm:py-3 bg-[#2D2A2E]/60 hover:bg-[#2D2A2E]/80 backdrop-blur-sm text-[#FCFCFA] font-mono text-sm sm:text-base rounded-xl border border-[#5C6370]/40 hover:border-[#FF6188]/60 transition-all duration-300"
           >
-            Projects →
+            Projects <span aria-hidden="true">→</span>
           </a>
         </motion.div>
 

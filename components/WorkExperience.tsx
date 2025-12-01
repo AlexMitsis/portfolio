@@ -8,7 +8,7 @@ const experiences = [
     role: 'Software Engineer',
     period: 'Jun 2024 - Present',
     location: 'GREECE',
-    logo: 'https://play-lh.googleusercontent.com/0NEvRIBffJF0vFDChbTSys1Vl32LepI3OG2djuy3GsfrXo08jgetLwV-xFYaxLpy5w',
+    logo: '/chubb.jpeg',
     gradient: 'from-[#AB9DF2]/5 via-[#2D2A2E]/95 to-[#FC9867]/5',
     borderColor: 'border-[#AB9DF2]/20 hover:border-[#AB9DF2]/40',
     logoGradient: 'from-[#AB9DF2]/30 via-[#2D2A2E]/70 to-[#FC9867]/30',
@@ -38,6 +38,7 @@ const experiences = [
     role: 'Software Engineer (AI/ML)',
     period: 'Mar 2024 - May 2024',
     location: 'GREECE',
+    logo: '/medipass.jpeg',
     emoji: '💊',
     gradient: 'from-[#FFD866]/5 via-[#2D2A2E]/95 to-[#FF6188]/5',
     borderColor: 'border-[#FFD866]/20 hover:border-[#FFD866]/40',
@@ -68,6 +69,7 @@ const experiences = [
     role: 'Web Developer (Internship)',
     period: 'Nov 2022 - Jan 2023',
     location: 'GREECE',
+    logo: '/cactus.jpeg',
     emoji: '🌵',
     gradient: 'from-[#78DCE8]/5 via-[#2D2A2E]/95 to-[#A9DC76]/5',
     borderColor: 'border-[#78DCE8]/20 hover:border-[#78DCE8]/40',
@@ -110,7 +112,7 @@ export default function WorkExperience() {
 
       {/* Work Experience */}
       <div id="work-experience" className="py-24">
-        <div className="px-12 md:px-16">
+        <div className="px-4 sm:px-6 md:px-12 lg:px-16">
         <div className="space-y-0">
           {experiences.map((exp, index) => (
             <motion.div
@@ -121,14 +123,14 @@ export default function WorkExperience() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <div className={`relative bg-gradient-to-br ${exp.gradient} backdrop-blur-3xl p-8 rounded-[2rem] border ${exp.borderColor} transition-all duration-500 overflow-hidden ${exp.shadowHover} group-hover:scale-[1.01]`}>
+              <div className={`relative bg-gradient-to-br ${exp.gradient} backdrop-blur-3xl p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-[2rem] border ${exp.borderColor} transition-all duration-500 overflow-hidden ${exp.shadowHover} group-hover:scale-[1.01]`}>
                 {/* Decorative background */}
                 <div className={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${exp.decorGradient1} rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700`}></div>
                 <div className={`absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-br ${exp.decorGradient2} rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700`}></div>
 
                 <div className="relative z-10">
                   <motion.div
-                    className="flex items-start gap-6"
+                    className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -142,15 +144,16 @@ export default function WorkExperience() {
                       transition={{ delay: 0.1, duration: 0.5 }}
                       whileHover={{ scale: 1.05 }}
                     >
-                      <div className={`w-24 h-24 bg-gradient-to-br ${exp.logoGradient} backdrop-blur-xl rounded-2xl border ${exp.borderColor.split(' ')[0]} flex items-center justify-center shadow-lg ${exp.shadowColor} ${exp.logo ? 'overflow-hidden p-3' : ''}`}>
+                      <div className={`w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br ${exp.logoGradient} backdrop-blur-xl rounded-2xl border ${exp.borderColor.split(' ')[0]} flex items-center justify-center shadow-lg ${exp.shadowColor} ${exp.logo ? 'overflow-hidden p-3' : ''}`}>
                         {exp.logo ? (
                           <img
                             src={exp.logo}
                             alt={`${exp.company} Logo`}
-                            className="w-full h-full object-contain"
+                            className="w-full h-full object-contain rounded-xl"
+                            loading="lazy"
                           />
                         ) : (
-                          <span className="text-4xl">{exp.emoji}</span>
+                          <span className="text-3xl sm:text-4xl" aria-hidden="true">{exp.emoji}</span>
                         )}
                       </div>
                     </motion.div>
@@ -163,7 +166,7 @@ export default function WorkExperience() {
                       transition={{ delay: 0.1, duration: 0.5 }}
                     >
                       <motion.h3
-                        className={`text-[#FCFCFA] font-bold text-2xl mb-2 ${exp.hoverColor} transition-colors duration-300`}
+                        className={`text-[#FCFCFA] font-bold text-xl sm:text-2xl mb-2 ${exp.hoverColor} transition-colors duration-300`}
                         initial={{ opacity: 0, y: -10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -172,7 +175,7 @@ export default function WorkExperience() {
                         {exp.role}
                       </motion.h3>
                       <motion.p
-                        className={`${exp.textColor} font-mono text-sm mb-3`}
+                        className={`${exp.textColor} font-mono text-xs sm:text-sm mb-3`}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
@@ -203,7 +206,7 @@ export default function WorkExperience() {
                       >
                         {exp.bullets.map((bullet, idx) => (
                           <div key={idx} className="flex items-start gap-3">
-                            <span className={`${exp.bulletColor} -mt-0.5 flex-shrink-0`}>→</span>
+                            <span className={`${exp.bulletColor} -mt-0.5 flex-shrink-0`} aria-hidden="true">‣</span>
                             <p className="text-[#FCFCFA]/80 text-sm leading-relaxed">{bullet}</p>
                           </div>
                         ))}

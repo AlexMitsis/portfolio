@@ -1,15 +1,24 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import dynamic from 'next/dynamic';
+import { debounce } from '@/lib/performance';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import WorkExperience from '@/components/WorkExperience';
 import Education from '@/components/Education';
-import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import About from '@/components/About';
-import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+
+// Lazy load below-the-fold sections for better initial page load
+const Projects = dynamic(() => import('@/components/Projects'), {
+  loading: () => <div className="min-h-screen" />,
+});
+
+const Contact = dynamic(() => import('@/components/Contact'), {
+  loading: () => <div className="min-h-screen" />,
+});
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -65,10 +74,13 @@ export default function Home() {
       setScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Debounce scroll handler for better performance (16ms = ~60fps)
+    const debouncedHandleScroll = debounce(handleScroll, 16);
+
+    window.addEventListener('scroll', debouncedHandleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', debouncedHandleScroll);
     };
   }, []);
 

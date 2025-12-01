@@ -1,8 +1,8 @@
 # Alex Mitsis - Portfolio Website
 
-A modern, responsive portfolio website built with Next.js 15, featuring smooth animations, interactive components, and a contact form integration with Resend.
+A modern, responsive portfolio website built with Next.js 15, featuring smooth animations, interactive components, and a contact form integration with Resend. Feel free to use this as reference for your own portfolio project.
 
-## 🎨 Features
+## Features
 
 - **Responsive Design**: Fully responsive layout optimized for all devices
 - **Smooth Animations**: Framer Motion animations with spring physics
@@ -14,7 +14,7 @@ A modern, responsive portfolio website built with Next.js 15, featuring smooth a
 - **Modern UI**: Monokai Pro-inspired color scheme with frosted glass effects
 - **SEO Ready**: Static generation for optimal performance
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Framework**: [Next.js 15.5.3](https://nextjs.org/) with Turbopack
 - **UI Library**: [React 19](https://react.dev/)
@@ -24,7 +24,7 @@ A modern, responsive portfolio website built with Next.js 15, featuring smooth a
 - **Email Service**: [Resend](https://resend.com/)
 - **Language**: TypeScript
 
-## 📦 Installation
+## Installation
 
 1. **Clone the repository**
    ```bash
@@ -54,7 +54,7 @@ A modern, responsive portfolio website built with Next.js 15, featuring smooth a
 5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 portfolio/
@@ -85,7 +85,7 @@ portfolio/
 └── tsconfig.json             # TypeScript configuration
 ```
 
-## 🎯 Component Overview
+## Component Overview
 
 ### Hero Section
 Landing page with animated name, badges, and description.
@@ -119,7 +119,7 @@ Contact form with:
 - Success/error messages
 - Resend email integration
 
-## 🔧 Configuration
+## Configuration
 
 ### Resend Setup
 
@@ -159,7 +159,7 @@ The project uses a Monokai Pro-inspired color palette:
 
 Update colors in components or add to `tailwind.config.ts`.
 
-## 📝 Customization
+##  Customization
 
 ### Adding Projects
 
@@ -204,7 +204,7 @@ Edit `components/WorkExperience.tsx` to add/modify work experience entries.
 
 Edit `components/Education.tsx` to add/modify education entries.
 
-## 🚀 Deployment
+## Deployment
 
 ### Deploy to Vercel (Recommended)
 
@@ -236,7 +236,7 @@ The project can be deployed to any platform supporting Next.js:
 - [Railway](https://railway.app/)
 - [Render](https://render.com/)
 
-## 🛠️ Development
+## Development
 
 ### Available Scripts
 
@@ -264,15 +264,3 @@ The production build uses static generation for optimal performance:
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-## 📧 Contact
-
-Alex Mitsis - [GitHub](https://github.com/AlexMitsis)
-
----
-
-Built with ❤️ using Next.js and Tailwind CSS
