@@ -52,7 +52,7 @@ export default function ProjectCarouselEmbla({ projects }: ProjectCarouselEmblaP
 
   return (
     <div id="projects" className="py-12 relative">
-      <div className="embla overflow-hidden" ref={emblaRef}>
+      <div className="embla overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
         <div className="embla__container flex">
           {projects.map((project, idx) => {
             // Merge description with features

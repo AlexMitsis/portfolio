@@ -9,6 +9,7 @@ const educationData = [
     period: 'Oct 2023 - Present',
     location: 'GREECE',
     logo: '/auth.jpeg',
+    url: 'https://www.auth.gr/en/homepage/',
     emoji: '🎓',
     gradient: 'from-[#AB9DF2]/5 via-[#2D2A2E]/95 to-[#FF6188]/5',
     borderColor: 'border-[#AB9DF2]/20 hover:border-[#AB9DF2]/40',
@@ -39,6 +40,7 @@ const educationData = [
     period: '2018 - 2023',
     location: 'GREECE',
     logo: '/uom.webp',
+    url: 'https://www.uom.gr/en',
     emoji: '💻',
     gradient: 'from-[#78DCE8]/5 via-[#2D2A2E]/95 to-[#A9DC76]/5',
     borderColor: 'border-[#78DCE8]/20 hover:border-[#78DCE8]/40',
@@ -63,6 +65,7 @@ const educationData = [
     techHover: 'hover:bg-[#78DCE8]/5',
     subExperience: {
       logo: '/universityofmaribor.jpeg',
+      url: 'https://www.um.si/en/home-page/',
       emoji: '🌍',
       institution: 'University of Maribor',
       degree: 'Erasmus Exchange',
@@ -105,7 +108,7 @@ export default function Education() {
               className="group mb-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <div className={`relative bg-gradient-to-br ${edu.gradient} backdrop-blur-3xl p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-[2rem] border ${edu.borderColor} transition-all duration-500 overflow-hidden ${edu.shadowHover} group-hover:scale-[1.01]`}>
@@ -129,18 +132,25 @@ export default function Education() {
                       transition={{ delay: 0.1, duration: 0.5 }}
                       whileHover={{ scale: 1.05 }}
                     >
-                      <div className={`w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br ${edu.logoGradient} backdrop-blur-xl rounded-2xl border ${edu.borderColor.split(' ')[0]} flex items-center justify-center shadow-lg ${edu.shadowColor} ${edu.logo ? 'overflow-hidden p-3' : ''}`}>
-                        {edu.logo ? (
-                          <img
-                            src={edu.logo}
-                            alt={`${edu.institution} Logo`}
-                            className="w-full h-full object-contain rounded-xl"
-                            loading="lazy"
-                          />
-                        ) : (
-                          <span className="text-3xl sm:text-4xl" aria-hidden="true">{edu.emoji}</span>
-                        )}
-                      </div>
+                      <a
+                        href={edu.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <div className={`w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br ${edu.logoGradient} backdrop-blur-xl rounded-2xl border ${edu.borderColor.split(' ')[0]} flex items-center justify-center shadow-lg ${edu.shadowColor} ${edu.logo ? 'overflow-hidden p-3' : ''}`}>
+                          {edu.logo ? (
+                            <img
+                              src={edu.logo}
+                              alt={`${edu.institution} Logo`}
+                              className="w-full h-full object-contain rounded-xl"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span className="text-3xl sm:text-4xl" aria-hidden="true">{edu.emoji}</span>
+                          )}
+                        </div>
+                      </a>
                     </motion.div>
 
                     <motion.div
@@ -166,7 +176,14 @@ export default function Education() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2, duration: 0.5 }}
                       >
-                        {edu.institution} • {edu.period}
+                        <a
+                          href={edu.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline"
+                        >
+                          {edu.institution}
+                        </a> • {edu.period}
                       </motion.p>
                       <motion.div
                         className="flex items-center gap-2 mb-4"
@@ -252,31 +269,48 @@ export default function Education() {
                           >
                             <div className="flex items-start gap-4">
                               <div className="flex-shrink-0">
-                                <div className={`w-12 h-12 bg-[#2D2A2E]/80 backdrop-blur-xl rounded-xl border border-[#78DCE8]/30 flex items-center justify-center shadow-lg shadow-[#78DCE8]/20 ${edu.subExperience.logo ? 'overflow-hidden p-2' : ''}`}>
-                                  {edu.subExperience.logo ? (
-                                    <img
-                                      src={edu.subExperience.logo}
-                                      alt={`${edu.subExperience.institution} Logo`}
-                                      className="w-full h-full object-contain rounded-lg"
-                                      loading="lazy"
-                                    />
-                                  ) : (
-                                    <span className="text-xl" aria-hidden="true">{edu.subExperience.emoji}</span>
-                                  )}
-                                </div>
+                                <a
+                                  href={edu.subExperience.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block"
+                                >
+                                  <div className={`w-12 h-12 bg-[#2D2A2E]/80 backdrop-blur-xl rounded-xl border border-[#78DCE8]/30 flex items-center justify-center shadow-lg shadow-[#78DCE8]/20 ${edu.subExperience.logo ? 'overflow-hidden p-2' : ''}`}>
+                                    {edu.subExperience.logo ? (
+                                      <img
+                                        src={edu.subExperience.logo}
+                                        alt={`${edu.subExperience.institution} Logo`}
+                                        className="w-full h-full object-contain rounded-lg"
+                                        loading="lazy"
+                                      />
+                                    ) : (
+                                      <span className="text-xl" aria-hidden="true">{edu.subExperience.emoji}</span>
+                                    )}
+                                  </div>
+                                </a>
                               </div>
                               <div className="flex-1">
-                                <div className="flex items-center gap-2 mb-2 flex-wrap">
-                                  <h4 className="text-[#78DCE8] font-bold text-base sm:text-lg">
-                                    {edu.subExperience.degree}
-                                  </h4>
+                                <h4 className="text-[#78DCE8] font-bold text-base sm:text-lg mb-2">
+                                  {edu.subExperience.degree}
+                                </h4>
+                                <p className="text-[#78DCE8]/80 font-mono text-xs mb-3">
+                                  <a
+                                    href={edu.subExperience.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:underline"
+                                  >
+                                    {edu.subExperience.institution}
+                                  </a> • {edu.subExperience.period}
+                                </p>
+                                <div className="flex items-center gap-2 mb-3 flex-wrap">
                                   <span className={`px-2 py-0.5 bg-gradient-to-r ${edu.subExperience.badge.gradient} backdrop-blur-sm ${edu.subExperience.badge.color} text-xs font-mono rounded-full border ${edu.subExperience.badge.border}`}>
                                     {edu.subExperience.badge.text}
                                   </span>
+                                  <span className="px-2 py-0.5 bg-gradient-to-r from-[#A9DC76]/20 to-[#78DCE8]/20 backdrop-blur-sm text-[#A9DC76] text-xs font-mono rounded-full border border-[#A9DC76]/30">
+                                    SLOVENIA
+                                  </span>
                                 </div>
-                                <p className="text-[#78DCE8]/80 font-mono text-xs mb-3">
-                                  {edu.subExperience.institution} • {edu.subExperience.period}
-                                </p>
                                 <div className="space-y-2 mb-3">
                                   {edu.subExperience.bullets.map((bullet, idx) => (
                                     <div key={idx} className="flex items-start gap-3">

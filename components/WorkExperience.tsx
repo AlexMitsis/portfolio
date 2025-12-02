@@ -9,6 +9,7 @@ const experiences = [
     period: 'Jun 2024 - Present',
     location: 'GREECE',
     logo: '/chubb.jpeg',
+    url: 'https://www.linkedin.com/company/chubb',
     gradient: 'from-[#AB9DF2]/5 via-[#2D2A2E]/95 to-[#FC9867]/5',
     borderColor: 'border-[#AB9DF2]/20 hover:border-[#AB9DF2]/40',
     logoGradient: 'from-[#AB9DF2]/30 via-[#2D2A2E]/70 to-[#FC9867]/30',
@@ -20,6 +21,7 @@ const experiences = [
     shadowHover: 'group-hover:shadow-[0_0_60px_rgba(171,157,242,0.25)]',
     badges: [
       { text: 'CURRENT ROLE', gradient: 'from-[#AB9DF2]/20 to-[#FC9867]/20', color: 'text-[#AB9DF2]', border: 'border-[#AB9DF2]/30', hasIndicator: true },
+      { text: 'HYBRID', gradient: 'from-[#FFD866]/20 to-[#FC9867]/20', color: 'text-[#FFD866]', border: 'border-[#FFD866]/30', hasIndicator: false },
       { text: 'GREECE', gradient: 'from-[#A9DC76]/20 to-[#78DCE8]/20', color: 'text-[#A9DC76]', border: 'border-[#A9DC76]/30', hasIndicator: false }
     ],
     bullets: [
@@ -39,6 +41,7 @@ const experiences = [
     period: 'Mar 2024 - May 2024',
     location: 'GREECE',
     logo: '/medipass.jpeg',
+    url: 'https://www.linkedin.com/company/medipass-healthtech',
     emoji: '💊',
     gradient: 'from-[#FFD866]/5 via-[#2D2A2E]/95 to-[#FF6188]/5',
     borderColor: 'border-[#FFD866]/20 hover:border-[#FFD866]/40',
@@ -51,6 +54,7 @@ const experiences = [
     shadowHover: 'group-hover:shadow-[0_0_60px_rgba(255,216,102,0.25)]',
     badges: [
       { text: 'HACKATHON WINNER', gradient: 'from-[#FFD866]/20 to-[#FF6188]/20', color: 'text-[#FFD866]', border: 'border-[#FFD866]/30', hasIndicator: false },
+      { text: 'REMOTE', gradient: 'from-[#78DCE8]/20 to-[#AB9DF2]/20', color: 'text-[#78DCE8]', border: 'border-[#78DCE8]/30', hasIndicator: false },
       { text: 'GREECE', gradient: 'from-[#A9DC76]/20 to-[#78DCE8]/20', color: 'text-[#A9DC76]', border: 'border-[#A9DC76]/30', hasIndicator: false }
     ],
     bullets: [
@@ -70,6 +74,7 @@ const experiences = [
     period: 'Nov 2022 - Jan 2023',
     location: 'GREECE',
     logo: '/cactus.jpeg',
+    url: 'https://www.linkedin.com/company/cactus-web-development',
     emoji: '🌵',
     gradient: 'from-[#78DCE8]/5 via-[#2D2A2E]/95 to-[#A9DC76]/5',
     borderColor: 'border-[#78DCE8]/20 hover:border-[#78DCE8]/40',
@@ -82,6 +87,7 @@ const experiences = [
     shadowHover: 'group-hover:shadow-[0_0_60px_rgba(120,220,232,0.25)]',
     badges: [
       { text: 'INTERNSHIP', gradient: 'from-[#78DCE8]/20 to-[#A9DC76]/20', color: 'text-[#78DCE8]', border: 'border-[#78DCE8]/30', hasIndicator: false },
+      { text: 'ON-SITE', gradient: 'from-[#FC9867]/20 to-[#FF6188]/20', color: 'text-[#FC9867]', border: 'border-[#FC9867]/30', hasIndicator: false },
       { text: 'GREECE', gradient: 'from-[#A9DC76]/20 to-[#78DCE8]/20', color: 'text-[#A9DC76]', border: 'border-[#A9DC76]/30', hasIndicator: false }
     ],
     bullets: [
@@ -120,7 +126,7 @@ export default function WorkExperience() {
               className="group mb-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <div className={`relative bg-gradient-to-br ${exp.gradient} backdrop-blur-3xl p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-[2rem] border ${exp.borderColor} transition-all duration-500 overflow-hidden ${exp.shadowHover} group-hover:scale-[1.01]`}>
@@ -144,18 +150,25 @@ export default function WorkExperience() {
                       transition={{ delay: 0.1, duration: 0.5 }}
                       whileHover={{ scale: 1.05 }}
                     >
-                      <div className={`w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br ${exp.logoGradient} backdrop-blur-xl rounded-2xl border ${exp.borderColor.split(' ')[0]} flex items-center justify-center shadow-lg ${exp.shadowColor} ${exp.logo ? 'overflow-hidden p-3' : ''}`}>
-                        {exp.logo ? (
-                          <img
-                            src={exp.logo}
-                            alt={`${exp.company} Logo`}
-                            className="w-full h-full object-contain rounded-xl"
-                            loading="lazy"
-                          />
-                        ) : (
-                          <span className="text-3xl sm:text-4xl" aria-hidden="true">{exp.emoji}</span>
-                        )}
-                      </div>
+                      <a
+                        href={exp.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <div className={`w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br ${exp.logoGradient} backdrop-blur-xl rounded-2xl border ${exp.borderColor.split(' ')[0]} flex items-center justify-center shadow-lg ${exp.shadowColor} ${exp.logo ? 'overflow-hidden p-3' : ''}`}>
+                          {exp.logo ? (
+                            <img
+                              src={exp.logo}
+                              alt={`${exp.company} Logo`}
+                              className="w-full h-full object-contain rounded-xl"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span className="text-3xl sm:text-4xl" aria-hidden="true">{exp.emoji}</span>
+                          )}
+                        </div>
+                      </a>
                     </motion.div>
 
                     <motion.div
@@ -181,7 +194,14 @@ export default function WorkExperience() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2, duration: 0.5 }}
                       >
-                        {exp.company} • {exp.period}
+                        <a
+                          href={exp.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline"
+                        >
+                          {exp.company}
+                        </a> • {exp.period}
                       </motion.p>
                       <motion.div
                         className="flex items-center gap-2 mb-4"

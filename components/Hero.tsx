@@ -40,7 +40,9 @@ export default function Hero() {
           <span className="text-[#5C6370]" aria-hidden="true">|</span>{' '}
           <span className="inline-block sm:inline">Bioinformatics Researcher</span>{' '}
           <span className="text-[#5C6370]" aria-hidden="true">|</span>{' '}
-          <span className="inline-block sm:inline">AI/ML Developer</span>
+          <span className="inline-block sm:inline">AI/ML Developer</span>{' '}
+          <span className="text-[#5C6370]" aria-hidden="true">|</span>{' '}
+          <span className="inline-block sm:inline">EU based</span>
         </motion.p>
 
         <motion.div
